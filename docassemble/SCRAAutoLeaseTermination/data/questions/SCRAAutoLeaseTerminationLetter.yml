@@ -5,7 +5,7 @@ metadata:
   short title: |
     SCRA Auto Lease Termination Letter
   description: |
-    The SCRA Automotive Lease Termination Letter interview will help you draft a letter to your automotive leaseholder requesting they terminate your lease.
+    The SCRA Automotive Lease Termination Letter interview will help you draft a letter to your motor vehicle Lessor requesting they terminate your lease.
   #exit url: https://www.masslegalservices.org/content/online-snap-calculator
   show login: False
   #generate download screen: True
@@ -19,7 +19,7 @@ default screen parts:
   footer: |
     [:share-alt-square: Share](${ url_ask([{'undefine': ['al_sharing_type','al_how_share_link']}, 'al_share_form_screen', {'recompute': ['al_did_share_form']}, 'al_share_results']) })
     [:info-circle: About](${ url_action('about_this_interview') })
-    [:comment-dots: Feedback](https://forms.office.com/Pages/ResponsePage.aspx?id=gOsuS1HkzESOjJ_IxTUKuD8iguCNz0RHpK3V26oh9QpUQkJPTTc3UTBZU0cxVEpOQlMzSlc1R1gzQy4u){:target="_blank"}
+    [:comment-dots: Feedback](https://forms.office.com/Pages/ResponsePage.aspx?id=gOsuS1HkzESOjJ_IxTUKuD8iguCNz0RHpK3V26oh9QpUMENaWlpBTkNPTDlFUUZJSDEzNFlGMlhURC4u){:target="_blank"}
 ---
 features:
   question back button: True
@@ -76,18 +76,17 @@ content: |
 
   ### We keep your information safe
 
-  * We use the same technology that banks and online stores use to keep your information safe.
+  We use the same technology that banks and online stores use to keep your information safe. This includes:
   
-  * We use:
-    * 256 bit encryption
+  * 256 bit encryption
     
-    * Continual monitoring
+  * Continual monitoring
     
-    * Limited access controls
+  * Limited access controls
     
-    * Regular security updates
+  * Regular security updates
     
-    * Software firewalls
+  * Software firewalls
 
 
   ### Sharing your information
@@ -189,24 +188,20 @@ continue button field: AutoLeaseTerm_intro
 question: |
   Motor Vehicle Lease Termination Letter
 subquestion: |
- Use this interview to help you write a letter to your landlord, telling them you want to end your housing lease early under the Servicemembers Civil Relief Act (SCRA).
+ Use this interview to help you notify your lessor (the company or person who leased you the vehicle), telling them you want to end your lease early under the Servicemembers Civil Relief Act (SCRA).
   
-  Under the SCRA, you can break your lease early without penalty if:
+  Under the SCRA, you can end your lease early without penalty if:
   
-  - You signed the lease before starting active duty,  
-  - Your duty lasts at least 90 days, and 
-  - You give your landlord written notice and a copy of your military orders
+  - You signed the lease before starting military service, or before getting PCS or deployment orders outside the U.S.
+  - Your orders or entry are for at least 180 days  
+  - You give your lessor written notice and a copy of your military orders, and
+  - You return the vehicle no later than 15 days after the lessor has received notice
 
-  If you signed the lease after starting active duty, you can still end it early if:
-  
-  - You get Permanent Change of Station (PCS) or deployment orders for more than 90 days, and
-  - You provide at least a 30-day written notice along with your orders.
-  
-  If you follow these steps, your lease should end 30 days after your next rent payment is due.
+  If you follow these steps, your lease should end as soon as you turn in the vehicle. Again, the vehicle needs to be turned in no later than 15 days after written notice has been given.
  
-  NOTE: <b>This is not legal advice.</b> If you have detailed questions about terminating your lease under the SCRA, you should contact a lawyer. You can [find assistance](https://www.statesidelegal.org/stateside-map) at StatesideLegal's Find Legal Help. 
+  <b>Please Note: This is not legal advice.</b> If you have detailed questions about terminating your lease under the SCRA, you should contact a lawyer. You can [search for legal assistance](https://www.statesidelegal.org/stateside-map) using StatesideLegal's Find Legal Help tool. 
   
-  You can learn more about the SCRA in the [What is the Servicemembers Civil Relief Act? (Video).](https://www.statesidelegal.org/what-servicemembers-civil-relief-act-video). 
+  You can learn more about the SCRA in the video [What is the Servicemembers Civil Relief Act?](https://www.statesidelegal.org/what-servicemembers-civil-relief-act-video) at StatesideLegal.org. 
     
   ${ display_template(PTLA_terms_of_use, scrollable=True, collapse=False) }
 fields:
@@ -239,7 +234,7 @@ fields:
     - City/Town: users[0].address.city
     - State: users[0].address.state
     - Zip code: users[0].address.zip
-    - Phone number: user[0].phone_number 
+    - Phone number: users[0].phone_number 
 
 continue button field: user_address
 ---
@@ -258,7 +253,7 @@ fields:
 continue button field: service_status
 ---
 code: |
-  exit_button = [{'action': 'https://statesidelegal.org', 'label': 'Exit', 'icon': 'sign-out-alt', 'color': 'danger'}]
+  exit_button = [{'action': 'https://legalassistance.law.af.mil', 'label': 'Exit', 'icon': 'sign-out-alt', 'color': 'danger'}]
 
 ---
 id: Stop interview
@@ -267,13 +262,19 @@ question:  |
   <img src="https://apps-dev.ptla.org/playgroundstatic/SCRAHomeLeaseTermination/6/two_red_stop_signs_set.jpg" alt="Stop sign image and upheld hand with red background" style="width: 25%; height: auto;">
   
 subquestion: |
-  If you <b>do not</b> have orders for a permanent change of station or a deployment of 90 days or more, this letter does not apply to you. You should exit the interview and speak with your local JAG office for guidance.
+  This letter does not apply to you if you haven't:
   
-  You can click on the 'Next' button to complete the interview and view a sample letter. Just remember, it's only a sample. You should not send it to your landlord. 
+    - Entered active-duty military service since the beginning your lease, 
+    
+    - Received orders for a permanent change of station outside of the continental United States since starting your lease,  or 
+    
+    - Been ordered to deploy with a military unit for a period of not less than 180 days since beginning your lease 
+  
+  If none of these scenarios fit to your situation, please use the exit button below to find your local JAG office for advice.
 
-  If you <b>do</b> have orders but accidentally said you didn’t, click the 'Undo' link and correct your answer.
+  If you entered active duty or received pcs or deployment orders since you started your lease and mistakenly answers no on the previous page, click the 'Undo' link below to correct your answer and move on.
   
-  
+  You can click 'Next' to finish the interview and see a sample letter, but remember, it’s just a sample. You cannot use it to end your motor vehicle lease.
   
   <p>   </p>
 
@@ -287,7 +288,10 @@ id: Lessor
 question: |
   About your Lessor
 subquestion: |
-  These questions are about the person or company your lease is with, known as the "Lessor". You can get their name and address from your billing statement or by asking the dealer where you leased the vehicle. Most often your lease is with a car finance company like Toyota Financial Services or Ford Motor Credit Company, but sometimes it's with a less familiar company or even an individual.
+  These questions are about the person or company you leased your vehicle from, called the “Lessor.” 
+  
+  You can find their name and address on your billing statement or ask the dealer. It’s usually a finance company like Toyota Financial or Ford Credit, but it could be another company or an individual.
+   <p>   </p>
 fields:
   - Who is your lease with?: landlord_name
   
@@ -301,10 +305,17 @@ sets:
     - other_parties[0].address.state
     - other_parties[0].address.zip
 question:  |
-  What is the address for your lease company or individual?
+  What is your lessor's address?
 fields:
-  - code: |
-      other_parties[0].address_fields()
+  - Street address: other_parties[0].address.address
+  - Unit: other_parties[0].address.unit
+    required: False
+  - City/Town: other_parties[0].address.city
+  - State: other_parties[0].address.state
+  - Zip code: other_parties[0].address.zip
+  
+  #- code: |
+  #    other_parties[0].address_fields()
 
 continue button field: landlord_address
 ---
@@ -332,7 +343,7 @@ fields:
     maxlength: 99
   - "What is the model of this vehicle?": car1_model
   - "What is the color of this vehicle?": car1_color
-  - "What is the body type of this vehicle? Ex. SUV, Truck, Coupe, Etc.": car1_body
+  - "What is the body type of this vehicle? Ex. SUV, Truck, Sedan, Etc.": car1_body
   - "What is this vehicle's VIN number?": car1_vin
   - "Who is the Dealer where you got this vehicle?": car1_dealer
 
@@ -343,11 +354,13 @@ question: |
   About your leased vehicle's mileage
 fields:
   - "What is the mileage of your leased vehicle?": car1_mileage
-  - "Does the odometer reading show mileage in excess of its mechanical limits? This means the odometer has rolled over at least once.": excess
+  - "Does the odometer reading show mileage in excess of its mechanical limits?": excess
     datatype: yesnoradio
-  - "Is the odometer reading not the actual mileage for some reason?": not_actual
+  - "Is the odometer reading wrong for any reason?": not_actual
     datatype: yesnoradio
-
+auto terms:
+  excess of its mechanical limits: |
+    Example: Your odometer started over after 99,999 miles, so even though the odometer now reads 12,000 miles the actual mileage is 112,000. 
 continue button field: car_mileage
 ---
 id: About Your Rank and Military Branch
@@ -380,7 +393,7 @@ attachments:
       - pdf
       - docx
   - name: Next_Steps
-    filename: NextSteps - AutoLeaseTerminationLetter           
+    filename: NextSteps - SCRAAutoLeaseTermination           
     skip undefined: True
     docx template file: SCRA_auto_lease_term_next_steps.docx
     variable name: Next_Steps[i]
@@ -388,8 +401,10 @@ attachments:
 mandatory: True
 question: |
   All done! Below you can view, download, and email your completed letter. <p></p> 
-  <p>Please be sure to read the instructions. They will explain next steps depending on whether you have an attorney or not.</p>
+  <p>Please be sure to read the instructions. They explain your next steps and provide additional information. </p>
 subquestion: |
+
+  <b> NOTE: </b> Once you close out of this interview, you will not be able to access your completed letter again. Make sure you download and print your letter and instructions before closing.
 
   ${ al_user_bundle.download_list_html() }    
   
