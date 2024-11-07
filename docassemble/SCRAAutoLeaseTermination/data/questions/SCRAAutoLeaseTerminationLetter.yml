@@ -252,8 +252,14 @@ fields:
 
 continue button field: service_status
 ---
+#Exit button if the user doesn't met qualifications for the letter
 code: |
   exit_button = [{'action': 'https://legalassistance.law.af.mil', 'label': 'Exit', 'icon': 'sign-out-alt', 'color': 'danger'}]
+
+---
+#Exit button on the last page to close out of the interview
+code: |
+  exit_button2 = [{'action': 'https://statesidelegal.org', 'label': 'Exit', 'icon': 'sign-out-alt', 'color': 'danger'}]
 
 ---
 id: Stop interview
@@ -404,8 +410,12 @@ question: |
   <p>Please be sure to read the instructions. They explain your next steps and provide additional information. </p>
 subquestion: |
 
-  <b> NOTE: </b> Once you close out of this interview, you will not be able to access your completed letter again. Make sure you download and print your letter and instructions before closing.
+  <b> NOTE: </b> Once you close out of this webpage or click the red "Exit" button, you will not be able to access your completed letter again. Make sure you download and print your letter and instructions before closing out this page.
+  <p>   </p>
 
   ${ al_user_bundle.download_list_html() }    
   
   ${ al_user_bundle.send_button_html(show_editable_checkbox=False) }
+  
+action buttons:
+  code: exit_button2
