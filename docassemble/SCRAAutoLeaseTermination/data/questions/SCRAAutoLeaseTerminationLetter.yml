@@ -29,6 +29,7 @@ features:
     - ssltheme.css
   hide navbar: False 
   debug: False
+  popover trigger: hover
 ---
 modules:
   - docassemble.base.core
